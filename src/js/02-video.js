@@ -9,7 +9,7 @@ const iframe = document.querySelector('iframe');
     });
 
  player.on('timeupdate', throttleForVideo((data) => {
-    const stringCurrentTimeOfVideo =JSON.stringify(data)
+     const stringCurrentTimeOfVideo = JSON.stringify(data);
      localStorage.setItem('videoplayer-current-time', stringCurrentTimeOfVideo);
      
     
