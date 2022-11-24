@@ -17,14 +17,14 @@ const iframe = document.querySelector('iframe');
 
    
 
-player.setCurrentTime(() => {
+const timeForMove =function getStorageTime() {
+    
     let getCurrentTime = localStorage.getItem('videoplayer-current-time');
 
     if (getCurrentTime) {
-    let secondsValueOfVideo = JSON.parse(getCurrentTime);
-return secondsValueOfVideo.seconds;
+        let secondsValueOfVideo = JSON.parse(getCurrentTime);
+        return secondsValueOfVideo.seconds;
+    }
     };
-    return;
-}
-    
-);
+player.setCurrentTime(timeForMove());
+
