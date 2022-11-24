@@ -22,7 +22,7 @@ function imgValueFromGalleryItems(values) {
 </div>
        `
     }).join('');
-    return galaryBoxRef.insertAdjacentHTML += arrayValues;
+    return galaryBoxRef.insertAdjacentHTML(`afterbegin`,`${arrayValues}`);
 }; 
 imgValueFromGalleryItems(galleryItems);
 
