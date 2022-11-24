@@ -22,9 +22,14 @@ function imgValueFromGalleryItems(values) {
 </div>
        `
     }).join('');
-    return galaryBoxRef.innerHTML += arrayValues;
+    return galaryBoxRef.insertAdjacentHTML += arrayValues;
 }; 
 imgValueFromGalleryItems(galleryItems);
 
-new SimpleLightbox('.gallery a', { /* options */ });
+new SimpleLightbox('.gallery a', {
+      scrollZoom: false,
+    captionsData: "alt",
+    captionDelay: 250,
+
+});
 
