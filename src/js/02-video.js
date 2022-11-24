@@ -15,24 +15,16 @@ const iframe = document.querySelector('iframe');
     
  },1000));
 
-   let getCurrentTime = localStorage.getItem('videoplayer-current-time');
-let secondsValueOfVideo = JSON.parse(getCurrentTime);
-let seconds = secondsValueOfVideo.seconds;
+   
 
-player.setCurrentTime(seconds).then(function(second) {
-    // seconds = the actual time that the player seeked to
-}).catch(function(error) {
-    switch (error.name) {
-        case 'RangeError':
-            // the time was less than 0 or greater than the video’s duration
-            break;
+player.setCurrentTime(() => {
+    let getCurrentTime = localStorage.getItem('videoplayer-current-time');
 
-        default:
-            // some other error occurred
-            break;
-    }
-});
-
-    player.getVideoTitle().then(function(title) {
-        console.log('title:', title);
-    });
+    if (getCurrentTime) {
+    let secondsValueOfVideo = JSON.parse(getCurrentTime);
+return secondsValueOfVideo.seconds;
+    };
+    return;
+}
+    
+);
