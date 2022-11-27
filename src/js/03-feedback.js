@@ -7,10 +7,12 @@ initForm();
 
 formRef.addEventListener('submit', e => {
   e.preventDefault();
+  const userData = {};
     const formData = new FormData(formRef);
     formData.forEach((value, name) => {
-        alert(` ${name}:${value}`);
+      userData[name] = value;
     });
+  console.log(userData);
     localStorage.removeItem(LOCALSTORAGE_KEY);
 e.currentTarget.reset();
 });
