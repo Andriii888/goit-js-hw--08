@@ -25,6 +25,7 @@ const timeForMove =function getStorageTime() {
         let secondsValueOfVideo = JSON.parse(getCurrentTime);
         return secondsValueOfVideo.seconds;
     }
+    return 0;
     };
 player.setCurrentTime(timeForMove());
 
